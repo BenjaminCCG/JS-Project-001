@@ -1,10 +1,17 @@
 window.onload=function(){
     let list=document.getElementById('tab').getElementsByTagName('li')
+    let elevator=document.getElementById('elevator')
+    let mask=document.getElementById('mask')
+    let close_btn=document.getElementById('close_btn')
+    let lis=document.getElementById('lis').getElementsByTagName('li')
     let content=document.getElementsByClassName('tab-content-item')
     let box=document.getElementsByClassName('box')
     let boxImg=document.getElementsByClassName('box-img')
+    let scroll=document.getElementsByClassName('scroll')[0]
     let shade=document.getElementsByClassName('shade')
     let imgLoad=document.getElementsByClassName('imgLoad')[0]
+    let btn=document.getElementsByTagName('button')
+    let index=0;
     var json = [
         {txt: '当我们正在为生活疲于奔命的时候，生活已经离我们而去。——约翰·列侬', pic: 'images/0.jpg'},
         {txt: '活在世上，不必什么都知道，只知道最好的就够了。——王小波', pic: 'images/1.jpg'},
@@ -38,10 +45,17 @@ window.onload=function(){
         {txt: '天下就没有偶然，那不过是化了妆的，戴了面具的必然。——钱钟书', pic: 'images/29.jpg'}
     ]
     
+    console.log(mask);
     
+    btn[1].addEventListener('click',function(){
+        mask.style.display='block'
+    })
+    close_btn.addEventListener('click',function(){
+        mask.style.display='none'
+    })
     for(let i=0;i<list.length;i++){
         list[i].addEventListener('click',function(){
-            for(let  j=0;j<list.length;j++){
+            for(var j=0;j<list.length;j++){
                 list[j].className=''
                 content[j].style.display='none'
             }
@@ -62,7 +76,7 @@ window.onload=function(){
     for(let i=0;i<30;i++){
         str+=` <div class="box">
         <div class="box-img">
-            <img src="images/${i+1}.jpg" alt="">
+            <img src="images/${i}.jpg" alt="">
             <div class="shade">
                     <a href="#">采集</a>
                     <a href="#">
@@ -110,4 +124,36 @@ window.onload=function(){
             load();
         }
     })
+    window.addEventListener('scroll',function(){
+        let scro=document.documentElement.scrollTop||document.body.scrollTop;
+        if(scro>=200){
+            scroll.style.display='block'
+            elevator.style.display='block'
+        }
+        if(scro<200){
+            scroll.style.display='none'
+            elevator.style.display='none'
+        }
+    })
+    let timer=null;
+    elevator.addEventListener('click',function(){
+        timer=setInterval(function(){
+            document.documentElement.scrollTop-=20
+            if(document.documentElement.scrollTop<=0){
+                clearInterval(timer)
+            }
+        },2)
+       
+    })
+    setInterval(function(){
+        for(let i=0;i<lis.length;i++){
+            lis[i].style.opacity='0';
+        }
+        lis[index].style.opacity='1'
+        index++
+        if(index>6){
+            index=0
+        }
+    },2000)
+    
 }

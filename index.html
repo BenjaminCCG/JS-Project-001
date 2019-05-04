@@ -32,7 +32,7 @@
         </header>
         <section>
             <div class="banner">
-                <ul>
+                <ul id="lis">
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
@@ -92,24 +92,77 @@
                     </ul>
                 </div>
                 <div class="imgLoad">
-                    <div class="box">
-                        <div class="box-img">
-                            <img src="./images/0.jpg" alt="">
-                            <div class="shade">
-                                    <a href="#">采集</a>
-                                    <a href="#">
-                                        <span></span>
-                                    </a>
-                                </div>
-                        </div>
-                        <p>当我们正在为生活疲于奔命的时候，生活已经离我们而去。——约翰·列侬</p>
-                        
+                   
                     </div>
                 </div>
             </div>
-            <div class="tab-content-item">第二</div>
-            <div class="tab-content-item">第三</div>
+            <div class="tab-content-item" style="display:none">第二</div>
+            <div class="tab-content-item" style="display:none">第三</div>
         </div>
+        <div class="scroll">
+            <div class="scroll-wrap">
+                <div class="left">
+                    <h2>国内最优质图片灵感库</h2>
+                    <p>已有数百万出众网友，用花瓣保存喜欢的图片。</p>
+                </div>
+                <div class="right">
+                    <span>用社交帐号直接登录：</span>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </div>
+            </div>
+        </div>
+        <div id="elevator_item" class="elevator-item">
+            <a href="javascript:;" id="elevator" class="elevator" title="回到顶部"></a><br>
+            <a href="" class="plus"></a>
+        </div>
+        <section id="mask" class="mask">
+            <div id="mask_center" class="mask-center">
+                <!--关闭-->
+                <a href="#" class="close-btn" id="close_btn"></a>
+                <!--logo-->
+                <img class="logo-img" src="images/logo_2x.png" alt="">
+                <!--内容-->
+                <div class="center_box">
+                    <!--第三方帐号登录-->
+                    <div class="txtBox">
+                        <span></span>
+                        <span class="txt">使用第三方帐号登录</span>
+                        <span></span>
+                    </div>
+                    <!--按钮图片-->
+                    <div class="buttons">
+                        <a href="#" title="微博帐号登录" rel="nofollow" class="weibo"></a>
+                        <a href="#" title="QQ帐号登录" rel="nofollow" class="qzone"></a>
+                        <a href="#" title="微信帐号登录" rel="nofollow" class="wechat"></a>
+                        <a href="#" title="豆瓣帐号登录" rel="nofollow" class="douban"></a>
+                        <a href="#" title="人人帐号登录" rel="nofollow" class="renren"></a>
+                    </div>
+                    <div class="txtBox">
+                        <span></span>
+                        <span class="txt">使用手机号/邮箱登录</span>
+                        <span></span>
+                    </div>
+                    <!--表单-->
+                    <form action="" method="post" class="mail-login">
+                        <input type="hidden" name="_ref" value="frame">
+                        <input type="text" name="email" placeholder="输入手机号或者邮箱" class="clear-input">
+                        <input name="password" type="password" placeholder="密码" class="clear-input">
+                        <a href="#" onclick="return false;" class="btn btn18 rbtn">
+                            <span class="text"> 登录
+                            </span>
+                        </a>
+                    </form>
+                    <div class="switch-back">
+                        <a class="red-link">忘记密码»</a>
+                        还没有花瓣帐号？
+                        <a class="red-link">点击注册»</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 </html>
